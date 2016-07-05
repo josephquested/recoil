@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Character : MonoBehaviour {
+public class Character : MonoBehaviour
+{
 	Movement movement;
+	public Weapon weapon;
 
 	void Awake ()
 	{
@@ -14,8 +16,11 @@ public class Character : MonoBehaviour {
 		movement.Move(horizontal, vertial);
 	}
 
-	public void RecieveActionInput (bool fire1)
+	public void RecieveFireInput (bool fire1)
 	{
-		print(fire1);
+		if (fire1)
+		{
+			weapon.RecieveFireInput();
+		}
 	}
 }

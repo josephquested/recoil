@@ -14,7 +14,7 @@ public class InputController : MonoBehaviour
 	{
 		CursorInput();
 		MovementInput();
-		ActionInput();
+		FireInput();
 	}
 
 	void MovementInput ()
@@ -25,9 +25,9 @@ public class InputController : MonoBehaviour
 		);
 	}
 
-	void ActionInput ()
+	void FireInput ()
 	{
-		character.RecieveActionInput(Input.GetButtonDown("Fire1"));
+		character.RecieveFireInput(Input.GetButtonDown("Fire1"));
 	}
 
 	void CursorInput ()
