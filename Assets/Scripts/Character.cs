@@ -13,4 +13,9 @@ public class Character : MonoBehaviour {
 	{
 		movement.Move(horizontal, vertial);
 	}
+
+	public void RecieveActionInput (bool fire1)
+	{
+		print(fire1);
+	}
 }

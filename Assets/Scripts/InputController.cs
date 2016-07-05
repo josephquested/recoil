@@ -14,6 +14,7 @@ public class InputController : MonoBehaviour
 	{
 		CursorInput();
 		MovementInput();
+		ActionInput();
 	}
 
 	void MovementInput ()
@@ -22,6 +23,11 @@ public class InputController : MonoBehaviour
 		Input.GetAxis("Horizontal"),
 		Input.GetAxis("Vertical")
 		);
+	}
+
+	void ActionInput ()
+	{
+		character.RecieveActionInput(Input.GetButtonDown("Fire1"));
 	}
 
 	void CursorInput ()
