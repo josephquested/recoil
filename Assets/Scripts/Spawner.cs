@@ -27,6 +27,6 @@ public class Spawner : MonoBehaviour
 
 	public virtual void Spawn ()
 	{
-		Instantiate(spawnPrefab, spawnPoint.position, Quaternion.Euler(0, 170, 0));
+		Instantiate(spawnPrefab, spawnPoint.position, spawnPoint.rotation);
 	}
 }

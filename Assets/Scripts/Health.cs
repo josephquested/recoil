@@ -18,8 +18,20 @@ public class Health : MonoBehaviour
 
 		if (health <= 0)
 		{
-			Destroy(gameObject);
+			Destroy(this.GetComponent<Rigidbody>());
+			Destroy(this.GetComponent<NavMeshAgent>());
+			StartCoroutine(DestroyCoroutine());
 		}
+	}
+
+	IEnumerator DestroyCoroutine ()
+	{
+		while (transform.position.y > -5)
+		{
+			transform.Translate(Vector3.down * Time.deltaTime, Space.World);
+			yield return null;
+		}
+		Destroy(gameObject);
 	}
 
 	IEnumerator FlashCoroutine (float duration)
