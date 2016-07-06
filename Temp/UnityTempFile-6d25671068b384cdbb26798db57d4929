@@ -79,9 +79,13 @@
 -define:UNITY_EDITOR_OSX
 'Assets/Scripts/CameraController.cs'
 'Assets/Scripts/Character.cs'
+'Assets/Scripts/Drone.cs'
+'Assets/Scripts/GraveSpawner.cs'
+'Assets/Scripts/Health.cs'
 'Assets/Scripts/InputController.cs'
 'Assets/Scripts/Movement.cs'
 'Assets/Scripts/Projectile.cs'
+'Assets/Scripts/Spawner.cs'
 'Assets/Scripts/Weapon.cs'
 -r:'/Applications/Unity/Unity.app/Contents/Frameworks/Mono/lib/mono/unity/System.Runtime.Serialization.dll'
 -r:'/Applications/Unity/Unity.app/Contents/Frameworks/Mono/lib/mono/unity/System.Xml.Linq.dll'

@@ -4,6 +4,7 @@ using System.Collections;
 public class Weapon : MonoBehaviour
 {
 	public GameObject projectilePrefab;
+	public Transform spawnPoint;
 
 	public void RecieveFireInput ()
 	{
@@ -14,8 +15,8 @@ public class Weapon : MonoBehaviour
 	{
 		GameObject projectile = (GameObject)Instantiate(
 			projectilePrefab,
-			transform.position,
-			transform.rotation
+			spawnPoint.position,
+			spawnPoint.rotation
 		);
 		projectile.GetComponent<Projectile>().Fire(transform.forward);
 	}

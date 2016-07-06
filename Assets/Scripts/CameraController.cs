@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CameraController : MonoBehaviour {
 	Transform target;
-	float distance = 5;
+	public float distance;
 
 	void Start ()
 	{
@@ -14,8 +14,8 @@ public class CameraController : MonoBehaviour {
 	{
 		transform.position = new Vector3(
 			target.position.x,
-			10,
-			target.position.z - distance
+			distance,
+			target.position.z
 		);
 	}
 }

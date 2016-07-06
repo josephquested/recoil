@@ -6,6 +6,8 @@ public class Drone : MonoBehaviour
 	NavMeshAgent agent;
 	Transform goal;
 
+	public int damage;
+
 	void Awake ()
 	{
 		agent = GetComponent<NavMeshAgent>();
@@ -36,7 +38,7 @@ public class Drone : MonoBehaviour
 	{
 		if (collision.gameObject.tag == "Player")
 		{
-			// collision.gameObject.BroadcastMessage("Damage", 0.1f);
+			collision.gameObject.GetComponent<Health>().Damage(damage);
 		}
 	}
 }
