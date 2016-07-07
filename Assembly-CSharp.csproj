@@ -48,8 +48,8 @@
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\Character.cs" />
      <Compile Include="Assets\Scripts\Drone.cs" />
-     <Compile Include="Assets\Scripts\GraveSpawner.cs" />
      <Compile Include="Assets\Scripts\Health.cs" />
+     <Compile Include="Assets\Scripts\HiveSpawner.cs" />
      <Compile Include="Assets\Scripts\InputController.cs" />
      <Compile Include="Assets\Scripts\Movement.cs" />
      <Compile Include="Assets\Scripts\Projectile.cs" />

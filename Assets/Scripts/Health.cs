@@ -28,7 +28,7 @@ public class Health : MonoBehaviour
 	{
 		while (transform.position.y > -5)
 		{
-			transform.Translate(Vector3.down * Time.deltaTime, Space.World);
+			transform.Translate(Vector3.down * Time.deltaTime * 3, Space.World);
 			yield return null;
 		}
 		Destroy(gameObject);
