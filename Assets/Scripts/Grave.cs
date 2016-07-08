@@ -1,15 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ZombieSpawner : Spawner
+public class Grave : Spawner
 {
-	public Transform bounds;
 
 	public override void Spawn ()
 	{
 		GameObject zombie = (GameObject)Instantiate(
 			spawnPrefab,
-			RandomLocation(),
+			spawnPoint.position,
 			spawnPrefab.transform.rotation
 		);
 		StartCoroutine(SpawnCoroutine(zombie));
@@ -23,16 +22,5 @@ public class ZombieSpawner : Spawner
 			yield return null;
 		}
 		zombie.GetComponent<Zombie>().ActivateAgent();
-	}
-
-	Vector3 RandomLocation ()
-	{
-		float xRange = (bounds.localScale.x / 2) - 0.5f;
-		float zRange = (bounds.localScale.z / 2) - 0.5f;
-		return new Vector3(
-			Mathf.Round(Random.Range(-xRange, xRange)),
-			-2f,
-			Mathf.Round(Random.Range(-zRange, zRange))
-		);
 	}
 }
