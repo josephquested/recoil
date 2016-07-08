@@ -15,7 +15,7 @@ public class Zombie : Character
 			transform.Translate(Vector3.up * Time.deltaTime * 4, Space.World);
 			yield return null;
 		}
-		GetComponent<Zombie>().ActivateAgent();
+		ActivateAgent();
 	}
 
 	void FixedUpdate ()
@@ -28,9 +28,9 @@ public class Zombie : Character
 
 	public void ActivateAgent ()
 	{
-		if (GameObject.FindGameObjectWithTag("Player") != null)
+		agent = GetComponent<NavMeshAgent>();
+		if (agent != null)
 		{
-			agent = GetComponent<NavMeshAgent>();
 			goal = GameObject.FindGameObjectWithTag("Player").transform;
 			agent.enabled = true;
 		}

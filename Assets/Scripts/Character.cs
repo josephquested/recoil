@@ -14,9 +14,9 @@ public class Character : MonoBehaviour
 
 	public virtual IEnumerator AwakeCoroutine ()
 	{
-		while (transform.position.y < 2f)
+		while (transform.position.y < 1f)
 		{
-			transform.Translate(Vector3.up * Time.deltaTime * 4, Space.World);
+			transform.Translate(Vector3.up * Time.deltaTime * 3, Space.World);
 			yield return null;
 		}
 		GetComponent<Rigidbody>().isKinematic = false;

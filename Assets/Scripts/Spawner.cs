@@ -66,8 +66,8 @@ public class Spawner : MonoBehaviour
 
 	Vector3 RandomLocation ()
 	{
-		float xRange = (bounds.localScale.x / 2) - 2.5f;
-		float zRange = (bounds.localScale.z / 2) - 1.5f;
+		float xRange = (bounds.localScale.x / 2) - 3f;
+		float zRange = (bounds.localScale.z / 2) - 1f;
 
 		return new Vector3(
 			Mathf.Round(Random.Range(-xRange, xRange)),
