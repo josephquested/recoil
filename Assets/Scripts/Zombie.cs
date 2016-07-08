@@ -1,12 +1,30 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Zombie : MonoBehaviour
+public class Zombie : Character
 {
 	NavMeshAgent agent;
 	Transform goal;
 
 	public float damage;
+
+	public override IEnumerator AwakeCoroutine ()
+	{
+		while (transform.position.y < 1f)
+		{
+			transform.Translate(Vector3.up * Time.deltaTime * 4, Space.World);
+			yield return null;
+		}
+		GetComponent<Zombie>().ActivateAgent();
+	}
+
+	void FixedUpdate ()
+	{
+		if (agent != null)
+		{
+			UpdateAgent();
+		}
+	}
 
 	public void ActivateAgent ()
 	{
@@ -15,14 +33,6 @@ public class Zombie : MonoBehaviour
 			agent = GetComponent<NavMeshAgent>();
 			goal = GameObject.FindGameObjectWithTag("Player").transform;
 			agent.enabled = true;
-		}
-	}
-
-	void FixedUpdate ()
-	{
-		if (agent != null)
-		{
-			UpdateAgent();
 		}
 	}
 
