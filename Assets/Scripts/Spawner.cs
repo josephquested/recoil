@@ -3,15 +3,21 @@ using System.Collections;
 
 public class Spawner : MonoBehaviour
 {
+	GameManager gm;
 	bool cooling;
 
 	public Transform spawnPoint;
 	public GameObject spawnPrefab;
 	public float spawnCooldown;
 
+	void Awake ()
+	{
+		gm = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
+	}
+
 	void Update ()
 	{
-		if (!cooling)
+		if (!cooling && gm.gameActive)
 		{
 			StartCoroutine(SpawnCoroutine());
 		}
@@ -22,11 +28,7 @@ public class Spawner : MonoBehaviour
 		cooling = true;
 		yield return new WaitForSeconds(spawnCooldown);
 		cooling = false;
-
-		if (GameObject.FindGameObjectWithTag("Player") != null)
-		{
-			Spawn();
-		}
+		Spawn();
 	}
 
 	public virtual void Spawn ()

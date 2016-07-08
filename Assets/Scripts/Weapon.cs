@@ -13,7 +13,8 @@ public class Weapon : MonoBehaviour
 
 	void Recoil ()
 	{
-		transform.parent.GetComponent<Rigidbody>().AddForce(-transform.forward * recoil);
+		Rigidbody rb = transform.parent.GetComponent<Rigidbody>();
+		if (rb != null) rb.AddForce(-transform.forward * recoil);
 	}
 
 	void Fire ()

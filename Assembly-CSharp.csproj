@@ -47,6 +47,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\Character.cs" />
+     <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\Grave.cs" />
      <Compile Include="Assets\Scripts\GraveSpawner.cs" />
      <Compile Include="Assets\Scripts\Health.cs" />

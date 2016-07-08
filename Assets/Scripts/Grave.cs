@@ -16,7 +16,7 @@ public class Grave : Spawner
 
 	IEnumerator SpawnCoroutine (GameObject zombie)
 	{
-		while (zombie.transform.position.y < 1.1f)
+		while (zombie.transform.position.y < 1.1f && zombie != null)
 		{
 			zombie.transform.Translate(Vector3.up * Time.deltaTime * 3, Space.World);
 			yield return null;
