@@ -12,7 +12,10 @@ public class Movement : MonoBehaviour {
 
 	public void Move (float horizontal, float vertical)
 	{
-		Vector3 movement = new Vector3(horizontal, 0, vertical);
-		rb.AddForce(movement * speed);
+		if (rb != null)
+		{
+			Vector3 movement = new Vector3(horizontal, 0, vertical);
+			rb.AddForce(movement * speed);
+		}
 	}
 }

@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{1B01C463-A333-08A6-4117-90C065DD2420}</ProjectGuid>
+    <ProjectGuid>{1D363253-3AD8-08A8-2D67-4109A349DD90}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -47,14 +47,14 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\Character.cs" />
-     <Compile Include="Assets\Scripts\Drone.cs" />
      <Compile Include="Assets\Scripts\Health.cs" />
-     <Compile Include="Assets\Scripts\HiveSpawner.cs" />
-     <Compile Include="Assets\Scripts\InputController.cs" />
+     <Compile Include="Assets\Scripts\Inputs.cs" />
      <Compile Include="Assets\Scripts\Movement.cs" />
      <Compile Include="Assets\Scripts\Projectile.cs" />
      <Compile Include="Assets\Scripts\Spawner.cs" />
      <Compile Include="Assets\Scripts\Weapon.cs" />
+     <Compile Include="Assets\Scripts\Zombie.cs" />
+     <Compile Include="Assets\Scripts\ZombieSpawner.cs" />
  <Reference Include="UnityEngine.Networking">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>

@@ -4,7 +4,6 @@ using System.Collections;
 public class Weapon : MonoBehaviour
 {
 	public GameObject projectilePrefab;
-	public Transform spawnPoint;
 	public float recoil;
 
 	public void RecieveFireInput ()
@@ -21,8 +20,8 @@ public class Weapon : MonoBehaviour
 	{
 		GameObject projectile = (GameObject)Instantiate(
 			projectilePrefab,
-			spawnPoint.position,
-			spawnPoint.rotation
+			transform.position,
+			transform.rotation
 		);
 
 		Recoil();

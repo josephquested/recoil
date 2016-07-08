@@ -22,7 +22,11 @@ public class Spawner : MonoBehaviour
 		cooling = true;
 		yield return new WaitForSeconds(spawnCooldown);
 		cooling = false;
-		Spawn();
+
+		if (GameObject.FindGameObjectWithTag("Player") != null)
+		{
+			Spawn();
+		}
 	}
 
 	public virtual void Spawn ()
