@@ -5,10 +5,33 @@ public class Weapon : MonoBehaviour
 {
 	public GameObject projectilePrefab;
 	public float recoil;
+	public float cooldown;
+
+	bool firing;
 
 	public void RecieveFireInput ()
 	{
-		Fire();
+		ProcessFire();
+	}
+
+	void ProcessFire ()
+	{
+		if (!firing) {
+			firing = true;
+			Fire();
+			Recoil();
+			StartCoroutine(CooldownCoroutine());
+		}
+	}
+
+	void Fire ()
+	{
+		GameObject projectile = (GameObject)Instantiate(
+		projectilePrefab,
+		transform.position,
+		transform.rotation
+		);
+		projectile.GetComponent<Projectile>().Fire(transform.forward);
 	}
 
 	void Recoil ()
@@ -17,15 +40,9 @@ public class Weapon : MonoBehaviour
 		if (rb != null) rb.AddForce(-transform.forward * recoil);
 	}
 
-	void Fire ()
+	IEnumerator CooldownCoroutine ()
 	{
-		GameObject projectile = (GameObject)Instantiate(
-			projectilePrefab,
-			transform.position,
-			transform.rotation
-		);
-
-		Recoil();
-		projectile.GetComponent<Projectile>().Fire(transform.forward);
+		yield return new WaitForSeconds(cooldown);
+		firing = false;
 	}
 }
