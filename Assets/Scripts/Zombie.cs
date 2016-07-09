@@ -31,8 +31,12 @@ public class Zombie : Character
 		agent = GetComponent<NavMeshAgent>();
 		if (agent != null)
 		{
-			goal = GameObject.FindGameObjectWithTag("Player").transform;
-			agent.enabled = true;
+			GameObject player = GameObject.FindWithTag("Player");
+			if (player != null)
+			{
+				goal = player.transform;
+				agent.enabled = true;
+			}
 		}
 	}
 
@@ -41,10 +45,6 @@ public class Zombie : Character
 		if (goal != null)
 		{
 			agent.destination = goal.position;
-		}
-		else if (agent != null)
-		{
-			agent.destination = transform.position;
 		}
 	}
 
