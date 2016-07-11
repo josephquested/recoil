@@ -3,11 +3,11 @@ using System.Collections;
 
 public class Inputs : MonoBehaviour
 {
-	Character character;
+	Player character;
 
 	void Awake ()
 	{
-		character = GetComponent<Character>();
+		character = GetComponent<Player>();
 	}
 
 	void FixedUpdate ()

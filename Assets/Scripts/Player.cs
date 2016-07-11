@@ -1,14 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Character : MonoBehaviour
+public class Player : MonoBehaviour
 {
-	Movement movement;
+	GameManager gameManager;
+	public bool active;
+
 	public Weapon weapon;
 
 	void Awake ()
 	{
-		movement = GetComponent<Movement>();
+		gameManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
 		StartCoroutine(AwakeCoroutine());
 	}
 
@@ -19,14 +21,25 @@ public class Character : MonoBehaviour
 			transform.Translate(Vector3.up * Time.deltaTime * 20, Space.World);
 			yield return null;
 		}
+
 		GetComponent<Rigidbody>().isKinematic = false;
+		active = true;
 	}
 
 	public void RecieveFireInput (bool fire)
 	{
-		if (fire)
+		if (fire && active)
 		{
 			weapon.RecieveFireInput();
+		}
+	}
+
+	void OnTriggerEnter (Collider collider)
+	{
+		if (collider.CompareTag("Bounds"))
+		{
+			active = false;
+			gameManager.Lose();
 		}
 	}
 }
