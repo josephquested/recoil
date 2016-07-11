@@ -17,7 +17,6 @@ public class GameManager : MonoBehaviour {
 	{
 		gameActive = true;
 		player = GameObject.FindWithTag("Player").GetComponent<Character>();
-		StartCoroutine(ScoreCoroutine());
 	}
 
 	void Update ()
@@ -25,16 +24,14 @@ public class GameManager : MonoBehaviour {
 		CheckForGameOver();
 	}
 
-	IEnumerator UpdateShots (int value)
+	public void UpdateShots (int value)
 	{
-		while (gameActive)
+		shots += value;
+		print(shots);
+
+		for (int i = 0; i < shotsTexts.Length; i++)
 		{
-			score++;
-			for (int i = 0; i < scoreTexts.Length; i++)
-			{
-				scoreTexts[i].text = score.ToString();
-			}
-			yield return new WaitForSeconds(1f);
+			shotsTexts[i].text = shots.ToString();
 		}
 	}
 

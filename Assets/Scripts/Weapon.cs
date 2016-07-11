@@ -27,6 +27,7 @@ public class Weapon : MonoBehaviour
 			sound.Fire();
 			Fire();
 			Recoil();
+			IncreaseShotCount();
 			StartCoroutine(CooldownCoroutine());
 		}
 	}
@@ -45,6 +46,11 @@ public class Weapon : MonoBehaviour
 	{
 		Rigidbody rb = transform.parent.GetComponent<Rigidbody>();
 		if (rb != null) rb.AddForce(-transform.forward * recoil);
+	}
+
+	void IncreaseShotCount ()
+	{
+		GameObject.FindWithTag("GameManager").GetComponent<GameManager>().UpdateShots(1);
 	}
 
 	IEnumerator CooldownCoroutine ()

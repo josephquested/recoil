@@ -16,7 +16,7 @@ public class Character : MonoBehaviour
 	{
 		while (transform.position.y < 1f)
 		{
-			transform.Translate(Vector3.up * Time.deltaTime * 3, Space.World);
+			transform.Translate(Vector3.up * Time.deltaTime * 20, Space.World);
 			yield return null;
 		}
 		GetComponent<Rigidbody>().isKinematic = false;

@@ -55,7 +55,6 @@
      <Compile Include="Assets\Scripts\Sound.cs" />
      <Compile Include="Assets\Scripts\Spawner.cs" />
      <Compile Include="Assets\Scripts\Weapon.cs" />
-     <Compile Include="Assets\Scripts\Zombie.cs" />
  <Reference Include="UnityEngine.Networking">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
