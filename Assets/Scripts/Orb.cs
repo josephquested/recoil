@@ -14,7 +14,7 @@ public class Orb : MonoBehaviour
 	{
 		if (collider.CompareTag("Player"))
 		{
-			// level controller do something
+			GameObject.FindWithTag("Goal").GetComponent<Goal>().OrbCollected();
 			Destroy(gameObject);
 		}
 	}

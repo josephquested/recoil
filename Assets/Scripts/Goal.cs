@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Goal : MonoBehaviour
 {
 	GameManager gameManager;
+	public List<GameObject> orbIcons = new List<GameObject>();
 
 	public GameObject orbIconPrefab;
 	public float delay;
@@ -17,7 +19,6 @@ public class Goal : MonoBehaviour
 	void Update ()
 	{
 		Rotate();
-		UpdateOrbIcons();
 	}
 
 	void Rotate ()
@@ -28,6 +29,7 @@ public class Goal : MonoBehaviour
 	IEnumerator CreateOrbIcons ()
 	{
 		GameObject[] orbs = GameObject.FindGameObjectsWithTag("Orb");
+
 		for (int i = 0; i < orbs.Length; i++)
 		{
 			Vector3 position = new Vector3(
@@ -43,18 +45,15 @@ public class Goal : MonoBehaviour
 			);
 
 			icon.transform.parent = transform;
+			orbIcons.Add(icon);
 			yield return new WaitForSeconds(delay);
 		}
-
-		// Add these newly created orbs to a class scoped orbs aray, then in the update
-		// orbs icon check to see if the number of orbs has changed in the scene,
-		// if it has, remove an orb from orbs array, then, if there are no orbs,
-		// the goal is unlocked
 	}
 
-	void UpdateOrbIcons ()
+	public void OrbCollected ()
 	{
-		GameObject[] orbs = GameObject.FindGameObjectsWithTag("Orb");
+		Destroy(orbIcons[0]);
+		orbIcons.RemoveAt(0);
 	}
 
 	void OnTriggerEnter (Collider collider)
