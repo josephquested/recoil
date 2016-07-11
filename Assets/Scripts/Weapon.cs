@@ -3,11 +3,17 @@ using System.Collections;
 
 public class Weapon : MonoBehaviour
 {
+	Sound sound;
+	bool firing;
+
 	public GameObject projectilePrefab;
 	public float recoil;
 	public float cooldown;
 
-	bool firing;
+	void Awake ()
+	{
+		sound = GetComponent<Sound>();
+	}
 
 	public void RecieveFireInput ()
 	{
@@ -18,6 +24,7 @@ public class Weapon : MonoBehaviour
 	{
 		if (!firing) {
 			firing = true;
+			sound.Fire();
 			Fire();
 			Recoil();
 			StartCoroutine(CooldownCoroutine());

@@ -22,14 +22,9 @@ public class Character : MonoBehaviour
 		GetComponent<Rigidbody>().isKinematic = false;
 	}
 
-	public void RecieveMovementInput (float horizontal, float vertial)
+	public void RecieveFireInput (bool fire)
 	{
-		movement.Move(horizontal, vertial);
-	}
-
-	public void RecieveFireInput (bool fire1)
-	{
-		if (fire1)
+		if (fire)
 		{
 			weapon.RecieveFireInput();
 		}

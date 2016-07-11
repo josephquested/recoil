@@ -19,7 +19,7 @@ public class CameraController : MonoBehaviour {
 			transform.position = new Vector3(
 			target.position.x,
 			distance,
-			target.position.z
+			target.position.z - 20
 			);
 		}
 	}

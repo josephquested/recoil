@@ -13,16 +13,7 @@ public class Inputs : MonoBehaviour
 	void FixedUpdate ()
 	{
 		CursorInput();
-		MovementInput();
 		FireInput();
-	}
-
-	void MovementInput ()
-	{
-		character.RecieveMovementInput(
-		Input.GetAxis("Horizontal"),
-		Input.GetAxis("Vertical")
-		);
 	}
 
 	void FireInput ()

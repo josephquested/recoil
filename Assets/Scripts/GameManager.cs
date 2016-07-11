@@ -8,8 +8,8 @@ public class GameManager : MonoBehaviour {
 
 	public bool gameActive;
 	public GameObject gameOverRender;
-	public Text[] scoreTexts;
-	public int score;
+	public Text[] shotsTexts;
+	public int shots;
 
 	Character player;
 
@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour {
 		CheckForGameOver();
 	}
 
-	IEnumerator ScoreCoroutine ()
+	IEnumerator UpdateShots (int value)
 	{
 		while (gameActive)
 		{
