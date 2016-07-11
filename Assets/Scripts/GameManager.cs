@@ -35,7 +35,13 @@ public class GameManager : MonoBehaviour {
 	public void Win ()
 	{
 		gameActive = false;
-		// loseRender.SetActive(true);
+		winRender.SetActive(true);
+	}
+
+	public void LoadNextLevel ()
+	{
+		int scene = SceneManager.GetActiveScene().buildIndex + 1;
+		SceneManager.LoadScene(scene, LoadSceneMode.Single);
 	}
 
 	public void Restart ()

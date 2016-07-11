@@ -14,6 +14,7 @@ public class Goal : MonoBehaviour
 	{
 		if (collider.CompareTag("Player"))
 		{
+			collider.GetComponent<Player>().active = false;
 			gameManager.Win();
 		}
 	}
