@@ -4,15 +4,17 @@ using System.Collections;
 public class Weapon : MonoBehaviour
 {
 	Sound sound;
+	Movement movement;
 	bool firing;
 
 	public GameObject projectilePrefab;
-	public float recoil;
 	public float cooldown;
+	public int recoil;
 
 	void Awake ()
 	{
 		sound = GetComponent<Sound>();
+		movement = transform.parent.GetComponent<Movement>();
 	}
 
 	public void RecieveFireInput ()
@@ -24,9 +26,9 @@ public class Weapon : MonoBehaviour
 	{
 		if (!firing) {
 			firing = true;
-			sound.Fire();
 			Fire();
 			Recoil();
+			sound.Fire();
 			IncreaseShotCount();
 			StartCoroutine(CooldownCoroutine());
 		}
@@ -44,8 +46,7 @@ public class Weapon : MonoBehaviour
 
 	void Recoil ()
 	{
-		Rigidbody rb = transform.parent.GetComponent<Rigidbody>();
-		if (rb != null) rb.AddForce(-transform.forward * recoil);
+		movement.ProcessMove(recoil);
 	}
 
 	void IncreaseShotCount ()
