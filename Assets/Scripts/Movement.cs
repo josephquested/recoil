@@ -10,9 +10,11 @@ public class Movement : MonoBehaviour
   float journeyLength;
 
 	public bool moving;
+	public bool diagonal;
 
-  public void ProcessMove (int recoil)
+  public void ProcessMove (float recoil)
 	{
+    if (diagonal) recoil *= 1.5f;
     target = Round(transform.TransformPoint(Vector3.back * recoil));
     startTime = Time.time;
     startMarker = Round(transform.position);
@@ -42,9 +44,9 @@ public class Movement : MonoBehaviour
 	Vector3 Round (Vector3 vec)
 	{
 		return new Vector3(
-			Mathf.Round(vec.x/0.5f)*0.5f,
-			Mathf.Round(vec.y/0.5f)*0.5f,
-			Mathf.Round(vec.z/0.5f)*0.5f
+			Mathf.Round(vec.x/0.5f) * 0.5f,
+			Mathf.Round(vec.y/0.5f) * 0.5f,
+			Mathf.Round(vec.z/0.5f) * 0.5f
 		);
 	}
 }

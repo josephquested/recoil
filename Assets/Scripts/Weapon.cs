@@ -9,7 +9,7 @@ public class Weapon : MonoBehaviour
 
 	public GameObject projectilePrefab;
 	public float cooldown;
-	public int recoil;
+	public float recoil;
 
 	void Awake ()
 	{
