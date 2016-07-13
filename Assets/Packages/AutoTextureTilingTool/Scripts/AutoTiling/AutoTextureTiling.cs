@@ -16,7 +16,7 @@ namespace AutoTiling {
 	/// --------------------
 	/// The base class of the Auto Texture Tiling Tool.
 	/// Just add this component to any GameObject with a Mesh (no Skinned Meshes yet, sorry), and it will keep the UV scaling relative to the object scaling.
-	/// 
+	///
 	/// This will NOT update the UV scaling in a build! Use DynamicTextureTiling instead.
 	/// </summary>
 	public class AutoTextureTiling : MonoBehaviour {
@@ -155,11 +155,11 @@ namespace AutoTiling {
 
 		}
 		public Vector2 bottomScale {
-			
+
 			get {
 				return _bottomScale;
 			}
-			
+
 			set {
 				_bottomScale = value;
 				if (useUnifiedScaling) {
@@ -167,14 +167,14 @@ namespace AutoTiling {
 				}
 				CreateMeshAndUVs ();
 			}
-			
+
 		}
 		public Vector2 leftScale {
-			
+
 			get {
 				return _leftScale;
 			}
-			
+
 			set {
 				_leftScale = value;
 				if (useUnifiedScaling) {
@@ -182,14 +182,14 @@ namespace AutoTiling {
 				}
 				CreateMeshAndUVs ();
 			}
-			
+
 		}
 		public Vector2 rightScale {
-			
+
 			get {
 				return _rightScale;
 			}
-			
+
 			set {
 				_rightScale = value;
 				if (useUnifiedScaling) {
@@ -197,14 +197,14 @@ namespace AutoTiling {
 				}
 				CreateMeshAndUVs ();
 			}
-			
+
 		}
 		public Vector2 frontScale {
-			
+
 			get {
 				return _frontScale;
 			}
-			
+
 			set {
 				_frontScale = value;
 				if (useUnifiedScaling) {
@@ -212,14 +212,14 @@ namespace AutoTiling {
 				}
 				CreateMeshAndUVs ();
 			}
-			
+
 		}
 		public Vector2 backScale {
-			
+
 			get {
 				return _backScale;
 			}
-			
+
 			set {
 				_backScale = value;
 				if (useUnifiedScaling) {
@@ -227,28 +227,28 @@ namespace AutoTiling {
 				}
 				CreateMeshAndUVs ();
 			}
-			
+
 		}
 
-		
+
 		public Vector2 topOffset {
-			
+
 			get {
 				return _topOffset;
 			}
-			
+
 			set {
 				_topOffset = value;
 				CreateMeshAndUVs ();
 			}
-			
+
 		}
 		public Vector2 bottomOffset {
-			
+
 			get {
 				return _bottomOffset;
 			}
-			
+
 			set {
 				_bottomOffset = value;
 				if (useUnifiedOffset) {
@@ -256,14 +256,14 @@ namespace AutoTiling {
 				}
 				CreateMeshAndUVs ();
 			}
-			
+
 		}
 		public Vector2 leftOffset {
-			
+
 			get {
 				return _leftOffset;
 			}
-			
+
 			set {
 				_leftOffset = value;
 				if (useUnifiedOffset) {
@@ -271,14 +271,14 @@ namespace AutoTiling {
 				}
 				CreateMeshAndUVs ();
 			}
-			
+
 		}
 		public Vector2 rightOffset {
-			
+
 			get {
 				return _rightOffset;
 			}
-			
+
 			set {
 				_rightOffset = value;
 				if (useUnifiedOffset) {
@@ -286,14 +286,14 @@ namespace AutoTiling {
 				}
 				CreateMeshAndUVs ();
 			}
-			
+
 		}
 		public Vector2 frontOffset {
-			
+
 			get {
 				return _frontOffset;
 			}
-			
+
 			set {
 				_frontOffset = value;
 				if (useUnifiedOffset) {
@@ -301,14 +301,14 @@ namespace AutoTiling {
 				}
 				CreateMeshAndUVs ();
 			}
-			
+
 		}
 		public Vector2 backOffset {
-			
+
 			get {
 				return _backOffset;
 			}
-			
+
 			set {
 				_backOffset = value;
 				if (useUnifiedOffset) {
@@ -316,7 +316,7 @@ namespace AutoTiling {
 				}
 				CreateMeshAndUVs ();
 			}
-			
+
 		}
 
 		public float topRotation {
@@ -462,7 +462,7 @@ namespace AutoTiling {
 				CreateMeshAndUVs();
 			}
 		}
-		
+
 		public bool bottomFlipX {
 			get {
 				return _bottomFlipX;
@@ -472,7 +472,7 @@ namespace AutoTiling {
 				CreateMeshAndUVs();
 			}
 		}
-		
+
 		public bool bottomFlipY {
 			get {
 				return _bottomFlipY;
@@ -482,7 +482,7 @@ namespace AutoTiling {
 				CreateMeshAndUVs();
 			}
 		}
-		
+
 		public bool leftFlipX {
 			get {
 				return _leftFlipX;
@@ -492,7 +492,7 @@ namespace AutoTiling {
 				CreateMeshAndUVs();
 			}
 		}
-		
+
 		public bool leftFlipY {
 			get {
 				return _leftFlipY;
@@ -512,7 +512,7 @@ namespace AutoTiling {
 				CreateMeshAndUVs();
 			}
 		}
-		
+
 		public bool rightFlipY {
 			get {
 				return _rightFlipY;
@@ -522,7 +522,7 @@ namespace AutoTiling {
 				CreateMeshAndUVs();
 			}
 		}
-		
+
 		public bool frontFlipX {
 			get {
 				return _frontFlipX;
@@ -532,7 +532,7 @@ namespace AutoTiling {
 				CreateMeshAndUVs();
 			}
 		}
-		
+
 		public bool frontFlipY {
 			get {
 				return _frontFlipY;
@@ -542,7 +542,7 @@ namespace AutoTiling {
 				CreateMeshAndUVs();
 			}
 		}
-		
+
 		public bool backFlipX {
 			get {
 				return _backFlipX;
@@ -552,7 +552,7 @@ namespace AutoTiling {
 				CreateMeshAndUVs();
 			}
 		}
-		
+
 		public bool backFlipY {
 			get {
 				return _backFlipY;
@@ -562,7 +562,7 @@ namespace AutoTiling {
 				CreateMeshAndUVs();
 			}
 		}
-		
+
 		void Awake() {
 
 			_meshFilter = GetComponent<MeshFilter> ();
@@ -598,7 +598,7 @@ namespace AutoTiling {
 		// Update is called once per frame
 #if UNITY_EDITOR
 		void Update () {
-		
+
 			if (!Application.isPlaying) {
 				if (scaleX != transform.localScale.x || scaleY != transform.localScale.y || scaleZ != transform.localScale.z) {
 					scaleX = transform.localScale.x;
@@ -690,7 +690,7 @@ namespace AutoTiling {
 				break;
 			}
 		}
-		
+
 		public void AlignOffsetLeft(Direction side) {
 			switch (side) {
 			case Direction.Back:
@@ -713,7 +713,7 @@ namespace AutoTiling {
 				break;
 			}
 		}
-		
+
 		public void AlignOffsetRight(Direction side) {
 			switch (side) {
 			case Direction.Back:
@@ -736,7 +736,7 @@ namespace AutoTiling {
 				break;
 			}
 		}
-		
+
 		public void SetTextureToFit(Direction side) {
 
 			switch (side) {
@@ -896,47 +896,47 @@ namespace AutoTiling {
 			meshData.AddVertex(new Vector3(0.5f, 0.5f, 0.5f));
 			meshData.AddVertex(new Vector3(0.5f, 0.5f, - 0.5f));
 			meshData.AddVertex(new Vector3(- 0.5f, 0.5f, - 0.5f));
-			
+
 			meshData.AddQuadTriangles();
 			meshData.AddUVCoordinates(QuadFaceUVs(Direction.Up));
-			
+
 			meshData.AddVertex(new Vector3(- 0.5f, - 0.5f, - 0.5f));
 			meshData.AddVertex(new Vector3(0.5f, - 0.5f, - 0.5f));
 			meshData.AddVertex(new Vector3(0.5f, - 0.5f, 0.5f));
 			meshData.AddVertex(new Vector3(- 0.5f, - 0.5f, 0.5f));
-			
+
 			meshData.AddQuadTriangles();
 			meshData.AddUVCoordinates(QuadFaceUVs(Direction.Down));
-			
+
 			meshData.AddVertex(new Vector3(0.5f, - 0.5f, 0.5f));
 			meshData.AddVertex(new Vector3(0.5f, 0.5f, 0.5f));
 			meshData.AddVertex(new Vector3(- 0.5f, 0.5f, 0.5f));
 			meshData.AddVertex(new Vector3(- 0.5f, - 0.5f, 0.5f));
-			
+
 			meshData.AddQuadTriangles();
 			meshData.AddUVCoordinates(QuadFaceUVs(Direction.Forward));
-			
+
 			meshData.AddVertex(new Vector3(- 0.5f, - 0.5f, - 0.5f));
 			meshData.AddVertex(new Vector3(- 0.5f, 0.5f, - 0.5f));
 			meshData.AddVertex(new Vector3(0.5f, 0.5f, - 0.5f));
 			meshData.AddVertex(new Vector3(0.5f, - 0.5f, - 0.5f));
-			
+
 			meshData.AddQuadTriangles();
 			meshData.AddUVCoordinates(QuadFaceUVs(Direction.Back));
-			
+
 			meshData.AddVertex(new Vector3(- 0.5f, - 0.5f, 0.5f));
 			meshData.AddVertex(new Vector3(- 0.5f, 0.5f, 0.5f));
 			meshData.AddVertex(new Vector3(- 0.5f, 0.5f, - 0.5f));
 			meshData.AddVertex(new Vector3(- 0.5f, - 0.5f, - 0.5f));
-			
+
 			meshData.AddQuadTriangles();
 			meshData.AddUVCoordinates(QuadFaceUVs(Direction.Left));
-			
+
 			meshData.AddVertex(new Vector3(0.5f, - 0.5f, - 0.5f));
 			meshData.AddVertex(new Vector3(0.5f, 0.5f, - 0.5f));
 			meshData.AddVertex(new Vector3(0.5f, 0.5f, 0.5f));
 			meshData.AddVertex(new Vector3(0.5f, - 0.5f, 0.5f));
-			
+
 			meshData.AddQuadTriangles();
 			meshData.AddUVCoordinates(QuadFaceUVs(Direction.Right));
 
@@ -1095,7 +1095,7 @@ namespace AutoTiling {
 		}
 
 //		private MeshData AddMeshDataForTriangleList(List<int> triangleIds, Vector3 normalDirection, MeshData newData, MeshData oldData) {
-//			
+//
 //			Dictionary<Vector3, int> oldIdNewIdMapping = new Dictionary<Vector3, int> ();
 //			foreach (int vertId in triangleIds) {
 //				if (!oldIdNewIdMapping.ContainsKey(oldData.Vertices[vertId])) {
@@ -1109,9 +1109,9 @@ namespace AutoTiling {
 //					newData.AddTriangle(oldIdNewIdMapping[oldData.Vertices[vertId]]);
 //				}
 //			}
-//			
+//
 //			return newData;
-//			
+//
 //		}
 
 		public static Direction GetCubeProjectionDirectionForNormal(Vector3 normal) {
@@ -1152,7 +1152,7 @@ namespace AutoTiling {
 
 			Direction uvDir = GetCubeProjectionDirectionForNormal(normal);
 			Vector2 uvCoord = new Vector2(1f, 1f);
-			
+
 			switch (uvDir) {
 			case Direction.Up:
 				uvCoord = Quaternion.Euler(0f, 0f, topRotation) * new Vector2(transform.localScale.z * vertex.z, transform.localScale.x * vertex.x);
@@ -1261,7 +1261,7 @@ namespace AutoTiling {
 				Debug.LogError(GetType() + ".SaveMeshAsset: mesh asset path has to start with \"Assets\".");
 				return;
 			}
-			
+
 			for (int i = 1; i < pathParts.Length; i++) {
 				if (!string.IsNullOrEmpty(pathParts[i])) {
 					string currentPath = pathParts[0];
@@ -1406,7 +1406,7 @@ namespace AutoTiling {
 			}
 
 		}
-		
+
 		public bool MeshPrefabExists() {
 
 //			Debug.Log (name + ": " + GetType() + ".MeshPrefabExists: trying to find mesh asset with name " + meshFilter.sharedMesh.name + ".");
@@ -1471,10 +1471,10 @@ namespace AutoTiling {
 //				}
 //				Gizmos.DrawSphere(v + transform.position + meshFilter.mesh.normals[i], .05f);
 //			}
-//			
+//
 //		}
 //		#endif
-		
+
 	}
 
 	public enum Direction {
